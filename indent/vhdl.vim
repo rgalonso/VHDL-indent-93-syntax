@@ -1,9 +1,11 @@
 " VHDL indent ('93 syntax)
 " Language:    VHDL
-" Maintainer:  Gerald Lai <laigera+vim?gmail.com>
-" Version:     1.58
-" Last Change: 2011 Sep 27
-" URL:         http://www.vim.org/scripts/script.php?script_id=1450
+" Maintainer:  Robert Alonso
+" Version:     2.0
+" Last Change: 2016 Feb 24
+" URL:         https://github.com/rgalonso/VHDL-indent-93-syntaxh
+"
+" Forked from version developed by Gerald Lai.  See https://github.com/vim-scripts/VHDL-indent-93-syntax
 
 " only load this indent file when no other was loaded
 if exists("b:did_indent")
@@ -310,7 +312,9 @@ function GetVHDLindent()
   " where:    end of previous line
   " _note_:   indent allowed to leave this filter
   if prevs =~? s:NC.'\%(\<begin\>\|'.s:NE.'\<\%(loop\|record\|units\)\>\)' || prevs =~? '^\s*\%(component\|else\|for\)\>' || prevs =~? s:NC.'\%('.s:NE.'\<generate\|\<\%(is\|then\)\|=>\)'.s:ES
-    let ind = ind + &sw
+    if !(prevs =~? '^\s*\<alias\>')
+      let ind = ind + &sw
+    endif
   endif
 
   " ****************************************************************************************
