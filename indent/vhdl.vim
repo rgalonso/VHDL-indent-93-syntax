@@ -3,7 +3,7 @@
 " Maintainer:  Robert Alonso
 " Version:     2.0
 " Last Change: 2016 Feb 24
-" URL:         https://github.com/rgalonso/VHDL-indent-93-syntaxh
+" URL:         https://github.com/rgalonso/VHDL-indent-93-syntax
 "
 " Forked from version developed by Gerald Lai.  See https://github.com/vim-scripts/VHDL-indent-93-syntax
 
